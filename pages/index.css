@@ -16,15 +16,28 @@
   flex-direction: column;
 }
 
+/* HEADER ------------------------------*/
 .header {
-  padding: 10px;
+  padding: 45px 0 40px;
+  border-bottom: 1px solid #545454;
+  box-sizing: border-box;
 }
 
+.header__logo {
+  max-width: 142px;
+  display: block;
+}
+
+/* MAIN -------------------------------*/
 .main {
   flex: 1;
-  background-color: yellow;
+  background-color: 161616;
 }
 
+/* PROFILE ----------------------------*/
+
+
+/* FOOTER -----------------------------*/
 .footer {
   padding: 10px;
 }
