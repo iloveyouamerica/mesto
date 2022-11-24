@@ -4,3 +4,27 @@
 /* подключаем сторонние шрифты */
 @import url(../vendor/fonts.css);
 
+.page {
+  background-color: #000;
+}
+
+.wrapper {
+  max-width: 880px;
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  padding: 10px;
+}
+
+.main {
+  flex: 1;
+  background-color: yellow;
+}
+
+.footer {
+  padding: 10px;
+}
