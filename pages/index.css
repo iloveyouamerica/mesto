@@ -1,0 +1,6 @@
+/* Импортируем normilize.css для сброса стандартных стилей браузера */
+@import url(../vendor/normalize.css);
+
+/* подключаем сторонние шрифты */
+@import url(../vendor/fonts.css);
+
