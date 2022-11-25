@@ -35,7 +35,84 @@
 }
 
 /* PROFILE ----------------------------*/
+.profile {
+  padding: 40px 0 0;
+  display: flex;
+  align-items: center;
+}
 
+.profile__avatar {
+  display: block;
+  max-width: 120px;
+  border-radius: 50%;
+  margin-right: 30px;
+}
+
+.profile__info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.profile__wrapper-name {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.profile__name {
+  margin: 0;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 42px;
+  line-height: 48px;
+  color: #fff;
+}
+
+.button {
+  cursor: pointer;
+  transition: .3s;
+}
+
+.button:hover {
+  opacity: .6;
+}
+
+.profile__edit-button {
+  margin: 0;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  background-image: url(../images/profile-info/edit-button.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 1px solid #fff;
+}
+
+.profile__job-title {
+  margin: 0;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #fff;
+}
+
+.profile__add-button {
+  width: 150px;
+  height: 50px;
+  padding: 0;
+  background-color: transparent;
+  background-image: url(../images/profile-info/add-button.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 2px solid #fff;
+  border-radius: 2px;
+}
 
 /* FOOTER -----------------------------*/
 .footer {
