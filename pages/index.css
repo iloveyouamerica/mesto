@@ -241,7 +241,7 @@
 
 @media screen and (max-width: 940px) {
   .elements__list {
-    grid-template-columns: repeat(auto-fit, minmax(282px, 45%));
+    grid-template-columns: repeat(auto-fit, minmax(282px, auto));
     grid-template-rows: auto;
   }
 }
@@ -249,7 +249,12 @@
 @media screen and (max-width: 618px) {
   .elements__list {
     grid-template-columns: repeat(auto-fit, minmax(282px, 100%));
-    grid-template-rows: auto;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .elements__list {
+    grid-template-rows: 361px;
   }
 }
 
