@@ -24,7 +24,6 @@
         </div>
         <button class="profile__add-button button"></button>
       </section>
-
       <section class="elements">
         <ul class="elements__list">
           <li class="elements__list-item">
@@ -83,9 +82,20 @@
           </li>
         </ul>
       </section>
+      <section class="popup-overlay popup-overlay_active">
+        <div class="popup-overlay__wrapper">
+          <button class="popup-overlay__close-btn button"></button>
+          <form action="" class="popup-overlay__form form">
+            <h3 class="form__title">Редактировать профиль</h3>
+            <input type="text" class="form__input" value="Жак-Ив Кусто">
+            <input type="text" class="form__input" value="Исследователь океана">
+            <input type="submit" class="form__submit" value="Сохранить">
+          </form>
+        </div>
+      </section>
     </main>
     <footer class="footer">
-      <p class="footer__text">© 2020 Mesto Russia</p>
+      <p class="footer__text">© 2022 Mesto Russia</p>
     </footer>
   </div>
 </body>

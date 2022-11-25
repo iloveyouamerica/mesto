@@ -7,6 +7,7 @@
 .page {
   font-family: 'Inter', Arial, sans-serif;
   background-color: #000;
+  position: relative;
 }
 
 .wrapper {
@@ -311,6 +312,104 @@
 
 .card__like_active {
   background-image: url(../images/elements/like-active.svg);
+}
+
+/* POPUP ----------------------------*/
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, .5);
+  display: none;
+}
+
+.popup-overlay_active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-overlay__wrapper {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: 1fr auto 1fr;
+  gap: 8px;
+}
+
+.popup-overlay__close-btn {
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+  background-image: url(../images/popup-overlay/close-btn.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: none;
+  grid-column: 3;
+  grid-row: 1;
+  cursor: pointer;
+}
+
+.popup-overlay__form {
+  max-width: 430px;
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.form {
+  padding: 34px 36px 37px;
+  box-sizing: border-box;
+  background: #fff;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+}
+
+.form__title {
+  margin: 0 0 54px;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000;
+}
+
+.form__input {
+  margin: 0 0 30px;
+  padding: 0 0 13px;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
+  outline: none;
+  font-family: 'Inter', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000;
+}
+
+.form__submit {
+  margin: 18px 0 0;
+  padding: 14px 0 18px;
+  width: 100%;
+  border: none;
+  background: #000;
+  border-radius: 2px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+  transition: opacity .3s;
+}
+
+.form__submit:hover {
+  opacity: .8;
 }
 
 /* FOOTER -----------------------------*/
