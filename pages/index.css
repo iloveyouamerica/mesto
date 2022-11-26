@@ -169,7 +169,7 @@
   }
 }
 
-.profile__job-title {
+.profile__about {
   margin: 0;
   font-family: 'Inter', Arial, sans-serif;
   font-style: normal;
@@ -180,14 +180,14 @@
 }
 
 @media screen and (max-width: 760px) {
-  .profile__job-title {
+  .profile__about {
     margin-top: 14px;
     text-align: center;
   }
 }
 
-@media screen and (max-width: 760px) {
-  .profile__job-title {
+@media screen and (max-width: 320px) {
+  .profile__about {
     font-size: 14px;
     line-height: 17px;
   }
