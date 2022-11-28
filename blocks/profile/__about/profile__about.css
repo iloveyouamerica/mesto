@@ -6,16 +6,19 @@
   font-size: 18px;
   line-height: 22px;
   color: #fff;
-  max-width: 80%;
+  max-width: 100%;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 940px) {
   .profile__about {
-    margin-top: 14px;
+    grid-column: 2;
+    justify-self: center;
     text-align: center;
+    font-size: calc(100vw * 0.04);
+    line-height: calc(100vw * 0.05);
   }
 }
 
