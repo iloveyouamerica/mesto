@@ -1,502 +1,59 @@
 /* Импортируем normilize.css для сброса стандартных стилей браузера */
 @import url(../vendor/normalize.css);
 
-/* подключаем сторонние шрифты */
+/* Подключаем сторонние шрифты -------------------------------------*/
 @import url(../vendor/fonts.css);
 
-.page {
-  font-family: 'Inter', Arial, sans-serif;
-  background-color: #000;
-  position: relative;
-}
-
-.wrapper {
-  max-width: 880px;
-  min-width: 320px;
-  min-height: 100vh;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-}
-
-/* HEADER ------------------------------*/
-.header {
-  padding: 45px 0 40px;
-  border-bottom: 1px solid rgba(54, 54, 54, .7);
-}
-
-@media screen and (max-width: 940px) {
-  .header {
-    padding: 28px 27px 31.6px;
-  }
-}
-
-.header__logo {
-  max-width: 142px;
-  display: block;
-}
-
-@media screen and (max-width: 320px) {
-  .header__logo {
-    max-width: 103.74px;
-    height: 24.4px;
-  } 
-}
-
-/* MAIN -------------------------------*/
-.main {
-  flex: 1;
-  background-color: 161616;
-}
-
-/* PROFILE ----------------------------*/
-.profile {
-  padding: 40px 0 0;
-  display: flex;
-  align-items: center;
-}
-
-@media screen and (max-width: 940px) {
-  .profile {
-    padding: 42px 19px 0;
-  }
-}
-
-@media screen and (max-width: 760px) {
-  .profile {
-    flex-direction: column;
-  }
-}
-
-.profile__avatar {
-  display: block;
-  max-width: 120px;
-  border-radius: 50%;
-  margin-right: 30px;
-}
-
-@media screen and (max-width: 760px) {
-  .profile__avatar {
-    margin: 0;
-  }
-}
-
-.profile__info {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  overflow: hidden;
-}
-
-@media screen and (max-width: 760px) {
-  .profile__info {
-    gap: 0;
-  }
-}
-
-.profile__wrapper-name {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-}
-
-@media screen and (max-width: 760px) {
-  .profile__wrapper-name {
-    margin-top: 26px;
-    display: grid;
-    width: 100%;
-    grid-template-columns: 1fr auto 1fr;
-    column-gap: 10px;
-  }
-}
-
-.profile__name {
-  margin: 0;
-  font-family: 'Inter', Arial, sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 42px;
-  line-height: 48px;
-  color: #fff;
-  max-width: 80%;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-@media screen and (max-width: 760px) {
-  .profile__name {
-    text-align: center;
-    grid-column: 2;
-    font-size: calc(100vw * 0.09);
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .profile__name {
-    font-size: 27px;
-    line-height: 33px;
-  }
-}
-
-.button {
-  cursor: pointer;
-  transition: opacity .3s;
-}
-
-.button:hover {
-  opacity: .6;
-}
-
-.profile__edit-button {
-  margin: 0;
-  padding: 0;
-  min-width: 24px;
-  min-height: 24px;
-  background-color: transparent;
-  background-image: url(../images/profile-info/edit-button.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  border: 1px solid #fff;
-}
-
-@media screen and (max-width: 760px) {
-  .profile__edit-button {
-    /**/
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .profile__edit-button {
-    min-width: 18px;
-    min-height: 18px;
-  }
-}
-
-.profile__about {
-  margin: 0;
-  font-family: 'Inter', Arial, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 22px;
-  color: #fff;
-  max-width: 80%;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-@media screen and (max-width: 760px) {
-  .profile__about {
-    margin-top: 14px;
-    text-align: center;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .profile__about {
-    font-size: 14px;
-    line-height: 17px;
-  }
-}
-
-.profile__add-button {
-  width: 150px;
-  height: 50px;
-  padding: 0;
-  background-color: transparent;
-  background-image: url(../images/profile-info/add-button.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  border: 2px solid #fff;
-  border-radius: 2px;
-}
-
-@media screen and (max-width: 760px) {
-  .profile__add-button {
-    margin-top: 36px;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .profile__add-button {
-    width: 100%;
-  }
-}
-
-/* ELEMENTS -----------------------------------*/
-.elements {
-  padding: 51px 0 0;
-}
-
-@media screen and (max-width: 940px) {
-  .elements {
-    padding: 36px 19px 0;
-  }
-}
-
-.elements__list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 282px);
-  /*grid-template-rows: 361px;*/
-  grid-auto-rows: 361px;
-  column-gap: 17px;
-  row-gap: 20px;
-  justify-content: center;
-}
-
-@media screen and (max-width: 940px) {
-  .elements__list {
-    grid-template-columns: repeat(auto-fit, minmax(282px, auto));
-    grid-template-rows: auto;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .elements__list {
-    grid-template-rows: 361px;
-  }
-}
-
-.elements__list-item {
-  
-}
-
-.elements__card {
-  margin: 0;
-}
-
-.card {
-  height: 100%;
-  border-radius: 10px;
-  overflow: hidden;
-  background-color: #fff;
-}
-
-.card__image {
-  display: block;
-  width: 100%;
-}
-
-.card__description {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 25px 20px 31px 21px;
-}
-
-.card__title {
-  max-width: 80%;
-  margin: 0;
-  font-family: 'Inter', Arial, sans-serif;
-  font-style: normal;
-  font-weight: 900;
-  font-size: 24px;
-  line-height: 29px;
-  color: #000;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.card__like {
-  align-self: center;
-  width: 22px;
-  height: 19px;
-  padding: 0;
-  background-color: transparent;
-  background-image: url(../images/elements/like-disabled.svg);
-  border: none;
-  transition: opacity .3s;
-  cursor: pointer;
-}
-
-.card__like:hover {
-  opacity: .5;
-}
-
-.card__like_active {
-  background-image: url(../images/elements/like-active.svg);
-}
-
-/* POPUP ----------------------------*/
-.popup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  min-height: 100vh;
-  background-color: rgba(0, 0, 0, .5);
-  display: none;
-}
-
-@media screen and (max-width: 618px) {
-  .popup {
-    padding: 0 19px;
-    box-sizing: border-box;
-  }
-}
-
-.popup_opened {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.popup__container {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  grid-template-rows: 1fr auto 1fr;
-  gap: 8px;
-}
-
-@media screen and (max-width: 618px) {
-  .popup__container {
-    grid-template-columns: auto;
-    grid-template-rows: 1fr auto 1fr;
-    row-gap: 16px;
-  }
-}
-
-.popup__close-btn {
-  width: 32px;
-  height: 32px;
-  background-color: transparent;
-  background-image: url(../images/popup-overlay/close-btn.svg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  border: none;
-  grid-column: 3;
-  grid-row: 1;
-  cursor: pointer;
-}
-
-@media screen and (max-width: 618px) {
-  .popup__close-btn {
-    width: 20px;
-    height: 20px;
-    grid-column: 1;
-    justify-self: end;
-  }
-}
-
-.popup__form {
-  width: 430px;
-  grid-column: 2;
-  grid-row: 2;
-}
-
-@media screen and (max-width: 618px) {
-  .popup__form {
-    width: 100%;
-    grid-column: 1;
-  }
-}
-
-.form {
-  padding: 34px 36px 37px;
-  box-sizing: border-box;
-  background: #fff;
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
-  border-radius: 10px;
-}
-
-@media screen and (max-width: 618px) {
-  .form {
-    padding: 25px 22px;
-  }
-}
-
-.form__title {
-  margin: 0 0 54px;
-  font-family: 'Inter', Arial, Helvetica, sans-serif;
-  font-style: normal;
-  font-weight: 900;
-  font-size: 24px;
-  line-height: 29px;
-  color: #000;
-}
-
-@media screen and (max-width: 618px) {
-  .form__title {
-    font-size: calc(100vw * 0.056);
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .form__title {
-    margin: 0 0 75px;
-    font-size: 18px;
-    line-height: 22px;
-  }
-}
-
-.form__input {
-  margin: 0 0 30px;
-  padding: 0 0 13px;
-  width: 100%;
-  border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, .2);
-  outline: none;
-  font-family: 'Inter', Arial, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 17px;
-  color: #000;
-}
-
-.form__submit {
-  margin: 18px 0 0;
-  padding: 14px 0 18px;
-  width: 100%;
-  border: none;
-  background: #000;
-  border-radius: 2px;
-  font-family: 'Inter', Arial, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 22px;
-  text-align: center;
-  color: #fff;
-  cursor: pointer;
-  transition: opacity .3s;
-}
-
-.form__submit:hover {
-  opacity: .8;
-}
-
-@media screen and (max-width: 320px) {
-  .form__submit {
-    margin: 15px 0 0;
-    padding: 14px 0 14px;
-  }
-}
-
-/* FOOTER -----------------------------*/
-.footer {
-  padding: 67px 0 60px;
-}
-
-@media screen and (max-width: 940px) {
-  .footer {
-    padding: 48px 19px 36px;
-  }
-}
-
-.footer__text {
-  font-family: 'Inter', Arial, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 22px;
-  color: #545454;
-  margin: 0;
-}
+/* Подключаем глобальные стили всей страницы -----------------------*/
+@import url(../blocks/page/page.css);
+@import url(../blocks/wrapper/wrapper.css);
+
+/* Header ----------------------------------------------------------*/
+@import url(../blocks/header/header.css);
+@import url(../blocks/header/__logo/header__logo.css);
+
+
+/* Main ------------------------------------------------------------*/
+@import url(../blocks/main/main.css);
+
+/* Profile ---------------------------------------------------------*/
+@import url(../blocks/profile/profile.css);
+@import url(../blocks/profile/__avatar/profile__avatar.css);
+@import url(../blocks/profile/__info/profile__info.css);
+@import url(../blocks/profile/__wrapper-name/profile__wrapper-name.css);
+@import url(../blocks/profile/__name/profile__name.css);
+@import url(../blocks/button/button.css);
+@import url(../blocks/profile/__edit-button/profile__edit-button.css);
+@import url(../blocks/profile/__about/profile__about.css);
+@import url(../blocks/profile/__add-button/profile__add-button.css);
+
+/* Elements --------------------------------------------------------*/
+@import url(../blocks/elements/elements.css);
+@import url(../blocks/elements/__list/elements__list.css);
+@import url(../blocks/elements/__card/elements__card.css);
+
+/* Card (карточки) -------------------------------------------------*/
+@import url(../blocks/card/card.css);
+@import url(../blocks/card/__image/card__image.css);
+@import url(../blocks/card/__description/card__description.css);
+@import url(../blocks/card/__title/card__title.css);
+@import url(../blocks/card/__like/card__like.css);
+@import url(../blocks/card/__like_active/card__like_active.css);
+
+/* Popup -----------------------------------------------------------*/
+@import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/_opened/popup_opened.css);
+@import url(../blocks/popup/__container/popup__container.css);
+@import url(../blocks/popup/__close-btn/popup__close-btn.css);
+@import url(../blocks/popup/__form/popup__form.css);
+
+/* Форма редактирования профиля ------------------------------------*/
+@import url(../blocks/form/form.css);
+@import url(../blocks/form/__title/form__title.css);
+@import url(../blocks/form/__input/form__input.css);
+@import url(../blocks/form/__submit/form__submit.css);
+
+
+/* Footer ----------------------------------------------------------*/
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/footer/__text/footer__text.css);
