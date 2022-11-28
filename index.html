@@ -25,76 +25,76 @@
       <section class="elements">
         <ul class="elements__list">
           <li class="elements__list-item">
-            <figure class="elements__card card">
+            <article class="elements__card card">
               <img src="./images/elements/karachaevsk.jpg" alt="Карачаевск - старинная постройка на вершине зелёной горы." class="card__image">
-              <figcaption class="card__description">
+              <div class="card__description">
                 <h2 class="card__title">Карачаевск</h2>
                 <button type="button" class="card__like" aria-label="Поставить лайк"></button>
-              </figcaption>
-            </figure>
+              </div>
+            </article>
           </li>
           <li class="elements__list-item">
-            <figure class="elements__card card">
+            <article class="elements__card card">
               <img src="./images/elements/elbrus.jpg" alt="Гора Эльбрус - вид издалека на рассвете." class="card__image">
-              <figcaption class="card__description">
+              <div class="card__description">
                 <h2 class="card__title">Гора Эльбрус</h2>
                 <button type="button" class="card__like" aria-label="Поставить лайк"></button>
-              </figcaption>
-            </figure>
+              </div>
+            </article>
           </li>
           <li class="elements__list-item">
-            <figure class="elements__card card">
+            <article class="elements__card card">
               <img src="./images/elements/dombay.jpg" alt="Домбай - вид горы в пасмурную погоду." class="card__image">
-              <figcaption class="card__description">
+              <div class="card__description">
                 <h2 class="card__title">Домбай</h2>
                 <button type="button" class="card__like" aria-label="Поставить лайк"></button>
-              </figcaption>
-            </figure>
+              </div>
+            </article>
           </li>
           <li class="elements__list-item">
-            <figure class="elements__card card">
+            <article class="elements__card card">
               <img src="./images/elements/elbrus.jpg" alt="Гора Эльбрус - вид издалека на рассвете." class="card__image">
-              <figcaption class="card__description">
+              <div class="card__description">
                 <h2 class="card__title">Гора Эльбрус</h2>
                 <button type="button" class="card__like" aria-label="Поставить лайк"></button>
-              </figcaption>
-            </figure>
+              </div>
+            </article>
           </li>
           <li class="elements__list-item">
-            <figure class="elements__card card">
+            <article class="elements__card card">
               <img src="./images/elements/dombay.jpg" alt="Домбай - вид горы в пасмурную погоду." class="card__image">
-              <figcaption class="card__description">
+              <div class="card__description">
                 <h2 class="card__title">Домбай</h2>
                 <button type="button" class="card__like" aria-label="Поставить лайк"></button>
-              </figcaption>
-            </figure>
+              </div>
+            </article>
           </li>
           <li class="elements__list-item">
-            <figure class="elements__card card">
+            <article class="elements__card card">
               <img src="./images/elements/karachaevsk.jpg" alt="Карачаево-Черкессия - старинная постройка на вершине зелёной горы." class="card__image">
-              <figcaption class="card__description">
+              <div class="card__description">
                 <h2 class="card__title">Карачаево-Черкессия</h2>
                 <button type="button" class="card__like" aria-label="Поставить лайк"></button>
-              </figcaption>
-            </figure>
+              </div>
+            </article>
           </li>
         </ul>
-      </section>
-      <section class="popup">
-        <div class="popup__container">
-          <button class="popup__close-btn button"></button>
-          <form class="popup__form form">
-            <h3 class="form__title">Редактировать профиль</h3>
-            <input type="text" class="form__input input-name" placeholder="Имя">
-            <input type="text" class="form__input input-about" placeholder="О себе">
-            <button type="submit" class="form__submit">Сохранить</button>
-          </form>
-        </div>
       </section>
     </main>
     <footer class="footer">
       <p class="footer__text">© 2022 Mesto Russia</p>
     </footer>
+    <div class="popup">
+      <div class="popup__container">
+        <button class="popup__close-btn button"></button>
+        <form method="POST" name="user-data" class="popup__form form">
+          <h3 class="form__title">Редактировать профиль</h3>
+          <input type="text" name="user-name" class="form__input" id="input-name" placeholder="Имя">
+          <input type="text" name="user-about" class="form__input" id="input-about" placeholder="О себе">
+          <button type="submit" class="form__submit">Сохранить</button>
+        </form>
+      </div>
+    </div>
   </div>
   <script src="./scripts/index.js"></script>
 </body>

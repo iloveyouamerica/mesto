@@ -4,9 +4,9 @@ const popup = document.querySelector('.popup'); // popup
 const popupCloseBtn = document.querySelector('.popup__close-btn'); // кнопка закрытия popup
 const profileName = document.querySelector('.profile__name'); // имя
 const profileAbout = document.querySelector('.profile__about'); // о себе
-const inputName = document.querySelector('.input-name'); // input с именем
-const inputAbout = document.querySelector('.input-about'); // input о себе
-const form = document.querySelector('.form');
+const inputName = document.querySelector('#input-name'); // input с именем
+const inputAbout = document.querySelector('#input-about'); // input о себе
+const form = document.querySelector('.form'); // форма редактирования данных пользователя
 
 // функция открытия popup
 function popupOpen() {
