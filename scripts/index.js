@@ -4,6 +4,7 @@ const addButton = document.querySelector('#add-btn'); // кнопка добав
 
 const popupEdit = document.querySelector('#popup-edit'); // popup редактирования данных пользователя
 const popupAdd = document.querySelector('#popup-add'); // popup добавления новых фотокарточек
+
 const closeEditButton = document.querySelector('#close-popup-edit'); // кнопка закрытия popup-edit
 const closeAddButton = document.querySelector('#close-popup-add'); // кнопка закрытия popup-add
 
@@ -50,13 +51,29 @@ const initialCards = [
   }
 ];
 
+// функция добавления и снятия лайков
+const getLike = (event) => {
+  // активируем или деактивируем лайк
+  event.target.classList.toggle('card__like_active');
+};
+
 // функция создаёт карточки
 const createCard = (cardName, cardLink) => {
+  // клонируем шаблон карточки
   const card = cardTemplate.content.querySelector('.elements__list-item').cloneNode(true);
+
+  // находим в карточке поле с именем
   const cloneCardImage = card.querySelector('.card__image');
+
+  // добавляем в поле имя и альтернативное описание
   cloneCardImage.src = cardLink;
   cloneCardImage.alt = cardName;
+
+  // устанавливаем имя карточке
   card.querySelector('.card__title').textContent = cardName;
+
+  // вешаем слушателя события на кпонку лайк
+  card.querySelector('.card__like').addEventListener('click', getLike);
   
   return card;
 };
@@ -67,14 +84,17 @@ const addCard = (card) => {
   cardContainer.prepend(card);
 };
 
-// выведем карточки из массива на страницу
+// выведем карточки из массива на страницу с помощью цикла forEach
 initialCards.forEach((item) => {
+  // создаём и добавляем карточку
   addCard(createCard(item.name, item.link));
 });
 
 // функция открывает нужный popup в зависимости от контекста вызова
 const popupOpen = (event) => {
-  const target = event.target.getAttribute('id'); // определим кто запрашивает открытие popup
+  // определим кто запрашивает открытие popup
+  const target = event.target.getAttribute('id');
+  
   if(target === 'edit-btn') { // popup открывает кнопка edit
     inputName.value = profileName.textContent;
     inputAbout.value = profileAbout.textContent;
