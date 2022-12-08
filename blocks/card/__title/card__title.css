@@ -12,19 +12,19 @@
   overflow: hidden;
 }
 
-@media screen and (max-width: 940px) {
+/*@media screen and (max-width: 940px) {
   .card__title {
     font-size: calc(100vw * 0.04);
     line-height: calc(100vw * 0.06);
   }
-}
+}*/
 
-@media screen and (max-width: 618px) {
+/*@media screen and (max-width: 618px) {
   .card__title {
     font-size: calc(100vw * 0.07);
     line-height: calc(100vw * 0.08);
   }
-}
+}*/
 
 @media screen and (max-width: 320px) {
   .card__title {
