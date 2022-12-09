@@ -56,13 +56,6 @@ const initialCards = [
   }
 ];
 
-// функция открывает popup с картинкой
-const openPopupImage = () => {
-  // добавляем класс-модификатор открытия popup и модификатор мягкого открытия popup
-  // мягкое открытие popup нужно вешать при наступлении события, иначе в момент загрузки станицы мы уивидим "тающий popup"
-  popupImageView.classList.add('popup_opened', 'popup_easy_open');
-};
-
 // функция добавления и снятия лайков
 const getLike = (event) => {
   // активируем или деактивируем лайк
@@ -85,7 +78,7 @@ const createBigViewImage = (name, link) => {
   bigImageTitle.textContent = name;
 
   // откроем popup
-  openPopupImage();
+  openPopup(popupImageView);
 };
 
 // функция создаёт карточки
@@ -123,38 +116,33 @@ initialCards.forEach((item) => {
   addCard(createCard(item.name, item.link));
 });
 
-// функция открывает popup с формой редактирования профиля
-const openPopupEdit = () => {
-  inputName.value = profileName.textContent;
-  inputAbout.value = profileAbout.textContent;
-  popupEdit.classList.add('popup_opened', 'popup_easy_open'); // добавляем класс-модификатор открытия popup
+// функция открытия для всех popup
+const openPopup = (popup) => {
+  // найдём id popup
+  const popupId = popup.getAttribute('id');
+
+  if(popupId === 'popup-edit') {
+    inputName.value = profileName.textContent;
+    inputAbout.value = profileAbout.textContent;
+  } 
+
+  // закроем popup
+  popup.classList.add('popup_opened');
 };
 
-//функция открывает popup с формой добавления карточки
-const openPopupAdd = () => {
-  popupAdd.classList.add('popup_opened', 'popup_easy_open'); // добавляем класс-модификатор открытия popup
-};
+// функция закрытия для всех popup
+const closePopup = (popup) => {
+  // найдём id popup
+  const popupId = popup.getAttribute('id');
 
-// функция закрывает popup с формой редактирования профиля
-const closePopupEdit = () => {
-  // удаляем класс-модификатор открытия popup-edit
-  popupEdit.classList.remove('popup_opened');
-};
+  if(popupId === 'popup-add') {
+    // очистим поля формы
+    inputNameCard.value = '';
+    inputLinkCard.value = '';
+  }
 
-// функция закрывает popup с формой добавления новой карточки
-const closePopupAdd = () => {
-  // очистим поля формы
-  inputNameCard.value = '';
-  inputLinkCard.value = '';
-
-  // удаляем класс-модификатор открытия popup-add
-  popupAdd.classList.remove('popup_opened');
-};
-
-// функция закрывает popup с просмотром картинки
-const closePopupViewImage = () => {
-  // удаляем класс-модификатор открытия popup-add
-  popupImageView.classList.remove('popup_opened');
+  // закроем popup
+  popup.classList.remove('popup_opened');
 };
 
 // функция сохраяет изменения в профайле
@@ -166,7 +154,7 @@ const saveChangeProfile = (event) => {
   profileAbout.textContent = inputAbout.value;
 
   // закрываем popup
-  closePopupEdit();
+  closePopup(popupEdit);
 }
 
 // функция принимает из формы данные для создания новой карточки
@@ -185,16 +173,16 @@ const getFormAddData  = (event) => {
   inputLinkCard.value = '';
 
   // закроем popup
-  closePopupAdd();
+  closePopup(popupAdd);
 };
 
 // слушатели событий
-buttonEdit.addEventListener('click', openPopupEdit); // открыть popup для редактирования данных
-buttonAdd.addEventListener('click', openPopupAdd); // открыть popup для добавления новых мест
+buttonEdit.addEventListener('click', () => {openPopup(popupEdit)}); // открыть popup для редактирования данных
+buttonAdd.addEventListener('click', () => {openPopup(popupAdd)}); // открыть popup для добавления новых мест
 
-buttonCloseEdit.addEventListener('click', closePopupEdit); // закрыть popup без сохранения изменений
-buttonCloseAdd.addEventListener('click', closePopupAdd); // закрыть popup без сохранения изменений
-buttonCloseImagePopup.addEventListener('click', closePopupViewImage); // закрыть popup с просмотром картинки
+buttonCloseEdit.addEventListener('click', () => {closePopup(popupEdit)}); // закрыть popup без сохранения изменений
+buttonCloseAdd.addEventListener('click', () => {closePopup(popupAdd)}); // закрыть popup без сохранения изменений
+buttonCloseImagePopup.addEventListener('click', () => {closePopup(popupImageView)}); // закрыть popup с просмотром картинки
 
 formProfileEdit.addEventListener('submit', saveChangeProfile); // отправка данных из формы редактирования профиля
 formCardAdd.addEventListener('submit', getFormAddData); // отправка данных из формы добавлеия новой карточки
