@@ -57,6 +57,15 @@ const getLike = (event) => {
   event.target.classList.toggle('card__like_active');
 };
 
+// функция удаления карточки
+const deleteCard = (event) => {
+  // найти ближайшего родителя
+  const card = event.target.closest('.elements__list-item');
+  
+  // удаляем карточку
+  card.remove();
+};
+
 // функция создаёт карточки
 const createCard = (cardName, cardLink) => {
   // клонируем шаблон карточки
@@ -72,8 +81,9 @@ const createCard = (cardName, cardLink) => {
   // устанавливаем имя карточке
   card.querySelector('.card__title').textContent = cardName;
 
-  // вешаем слушателя события на кпонку лайк
+  // вешаем слушатели событий на кпонку лайк и удаление
   card.querySelector('.card__like').addEventListener('click', getLike);
+  card.querySelector('.card__delete').addEventListener('click', deleteCard);
   
   return card;
 };
