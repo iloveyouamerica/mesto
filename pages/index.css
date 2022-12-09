@@ -49,6 +49,7 @@
 @import url(../blocks/popup/__close-btn/popup__close-btn.css);
 @import url(../blocks/popup/__form/popup__form.css);
 @import url(../blocks/popup/_opacity_dark/popup_opacity_dark.css);
+@import url(../blocks/popup/_easy_open/popup_easy_open.css);
 
 /* Форма редактирования профиля ------------------------------------*/
 @import url(../blocks/form/form.css);
