@@ -48,6 +48,7 @@
 @import url(../blocks/popup/__container/popup__container.css);
 @import url(../blocks/popup/__close-btn/popup__close-btn.css);
 @import url(../blocks/popup/__form/popup__form.css);
+@import url(../blocks/popup/_opacity_dark/popup_opacity_dark.css);
 
 /* Форма редактирования профиля ------------------------------------*/
 @import url(../blocks/form/form.css);
@@ -59,3 +60,8 @@
 /* Footer ----------------------------------------------------------*/
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__text/footer__text.css);
+
+/* Большая картинка для просмотра ----------------------------------*/
+@import url(../blocks/view-image/view-image.css);
+@import url(../blocks/view-image/__image/view-image__image.css);
+@import url(../blocks/view-image/__title/view-image__title.css);

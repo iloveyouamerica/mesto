@@ -29,17 +29,17 @@
     <footer class="footer">
       <p class="footer__text">© 2022 Mesto Russia</p>
     </footer>
-    <!-- popup редактирование profile -->
-    <div class="popup" id="popup-edit">
-      <div class="popup__container">
-        <button type="button" class="popup__close-btn button" id="close-popup-edit"></button>
-        <form method="POST" name="profile-edit" class="popup__form form" id="form-profile-edit">
-          <h3 class="form__title">Редактировать профиль</h3>
-          <input type="text" name="user-name" class="form__input" id="input-name" placeholder="Имя">
-          <input type="text" name="user-about" class="form__input" id="input-about" placeholder="О себе">
-          <button type="submit" class="form__submit">Сохранить</button>
-        </form>
-      </div>
+  </div>
+  <!-- popup редактирование profile -->
+  <div class="popup" id="popup-edit">
+    <div class="popup__container">
+      <button type="button" class="popup__close-btn button" id="close-popup-edit"></button>
+      <form method="POST" name="profile-edit" class="popup__form form" id="form-profile-edit">
+        <h3 class="form__title">Редактировать профиль</h3>
+        <input type="text" name="user-name" class="form__input" id="input-name" placeholder="Имя">
+        <input type="text" name="user-about" class="form__input" id="input-about" placeholder="О себе">
+        <button type="submit" class="form__submit">Сохранить</button>
+      </form>
     </div>
   </div>
   <!-- popup добавление карточек -->
@@ -54,13 +54,22 @@
       </form>
     </div>
   </div>
-</div>
+  <!-- popup просмотра фотографий -->
+  <div class="popup popup_opacity_dark" id="popup-image-view">
+    <div class="popup__container">
+      <button type="button" class="popup__close-btn button" id="close-popup-image-view"></button>
+      <figure class="view-image">
+        <img src="#" alt="" class="view-image__image">
+        <figcaption class="view-image__title"></figcaption>
+      </figure>
+    </div>
+  </div>
   <!-- template cards -->
   <template id="template-card">
     <li class="elements__list-item">
       <article class="elements__card card">
         <button type="button" class="card__delete button" aria-label="Удалить карточку"></button>
-        <img src="#" alt class="card__image">
+        <img src="#" alt="" class="card__image">
         <div class="card__description">
           <h2 class="card__title"></h2>
           <button type="button" class="card__like" aria-label="Поставить лайк"></button>
