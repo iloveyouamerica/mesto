@@ -88,31 +88,29 @@ initialCards.forEach((item) => {
   addCard(createCard(item.name, item.link));
 });
 
+// функция устанавливает значения введённые пользователем
+const setUserProfileData = () => {
+  inputName.value = profileName.textContent;
+  inputAbout.value = profileAbout.textContent;
+  openPopup(popupEditProfile);
+};
+
+// функция сбрасывает форму и закрывает popup
+const resetForm = (form) => {
+  form.reset();
+
+  // закроем соответствующий popup
+  closePopup(form.closest('.popup'));
+};
+
 // функция открытия для всех popup
 const openPopup = (popup) => {
-  // найдём id popup
-  const popupId = popup.getAttribute('id');
-
-  if(popupId === 'popup-edit') {
-    inputName.value = profileName.textContent;
-    inputAbout.value = profileAbout.textContent;
-  } 
-
-  // закроем popup
+  // откроем popup
   popup.classList.add('popup_opened');
 };
 
 // функция закрытия для всех popup
 const closePopup = (popup) => {
-  // найдём id popup
-  const popupId = popup.getAttribute('id');
-
-  if(popupId === 'popup-add') {
-    // очистим поля формы
-    inputNameCard.value = '';
-    inputLinkCard.value = '';
-  }
-
   // закроем popup
   popup.classList.remove('popup_opened');
 };
@@ -140,19 +138,16 @@ const submitAddCardForm  = (event) => {
   // создадим и добавим новую карточку
   addCard(createCard(nameCard, linkCard));
 
-  // очистим поля формы
-  event.target.reset();
-
-  // закроем popup
-  closePopup(popupAddCard);
+  // очистим поля формы и закроем popup
+  resetForm(event.target);
 };
 
 // слушатели событий
-buttonOpenEditProfileForm.addEventListener('click', () => {openPopup(popupEditProfile)}); // открыть popup для редактирования данных
+buttonOpenEditProfileForm.addEventListener('click', setUserProfileData); // открыть popup для редактирования данных
 buttonOpenAddCardForm.addEventListener('click', () => {openPopup(popupAddCard)}); // открыть popup для добавления новых мест
 
 buttonCloseEditPopup.addEventListener('click', () => {closePopup(popupEditProfile)}); // закрыть popup без сохранения изменений
-buttonCloseAddPopup.addEventListener('click', () => {closePopup(popupAddCard)}); // закрыть popup без сохранения изменений
+buttonCloseAddPopup.addEventListener('click', () => {resetForm(formCardAdd)}); // закрыть popup без сохранения изменений
 buttonCloseImagePopup.addEventListener('click', () => {closePopup(popupImageView)}); // закрыть popup с просмотром картинки
 
 formProfileEdit.addEventListener('submit', saveChangeProfile); // отправка данных из формы редактирования профиля
