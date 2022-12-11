@@ -89,7 +89,7 @@ initialCards.forEach((item) => {
 });
 
 // функция устанавливает значения введённые пользователем
-const setUserProfileData = () => {
+const setProfileData = () => {
   inputName.value = profileName.textContent;
   inputAbout.value = profileAbout.textContent;
   openPopup(popupEditProfile);
@@ -143,7 +143,7 @@ const submitAddCardForm  = (event) => {
 };
 
 // слушатели событий
-buttonOpenEditProfileForm.addEventListener('click', setUserProfileData); // открыть popup для редактирования данных
+buttonOpenEditProfileForm.addEventListener('click', setProfileData); // открыть popup для редактирования данных
 buttonOpenAddCardForm.addEventListener('click', () => {openPopup(popupAddCard)}); // открыть popup для добавления новых мест
 
 buttonCloseEditPopup.addEventListener('click', () => {closePopup(popupEditProfile)}); // закрыть popup без сохранения изменений
