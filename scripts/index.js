@@ -132,6 +132,8 @@ const closePopupByEsc = (event) => {
   if(event.key === 'Escape') {
     // найдём открытый popup
     const popupOpened = document.querySelector('.popup_opened');
+
+    //закроем найденный открытый popup
     closePopup(popupOpened);
   }
 };
