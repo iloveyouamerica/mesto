@@ -108,6 +108,11 @@ const openPopup = (popup) => {
   // откроем popup
   popup.classList.add('popup_opened');
 
+  // при открытии попап добавим обработчик события для клавиши Esc
+  document.addEventListener('keydown', (event) => {
+    closePopupByEsc(event, popup)
+  });
+
   // вызовем функцию добавления валидации всем формам
   // чтобы сразу проверить валидность формы на момент её открытия,
   // т.к. форма профиля получит данные имени и деятельности, 
@@ -118,6 +123,18 @@ const openPopup = (popup) => {
 const closePopup = (popup) => {
   // закроем popup
   popup.classList.remove('popup_opened');
+
+  // удалим обработчик события для клавиши Esc
+  document.removeEventListener('keydown', (event) => {
+    closePopupByEsc(event, popup)
+  });
+};
+
+// функция закроет popup клавишей Esc
+const closePopupByEsc = (event, popup) => {
+  if(event.key === 'Escape') {
+    closePopup(popup);
+  }
 };
 
 // функция сохраяет изменения в профайле
