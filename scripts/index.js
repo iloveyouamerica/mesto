@@ -157,3 +157,17 @@ buttonCloseImagePopup.addEventListener('click', () => {closePopup(popupImageView
 
 formProfileEdit.addEventListener('submit', saveChangeProfile); // отправка данных из формы редактирования профиля
 formCardAdd.addEventListener('submit', submitAddCardForm); // отправка данных из формы добавлеия новой карточки
+
+// закрытие popup по overlay, найдём все popup'ы в документе
+const popups = document.querySelectorAll('.popup');
+// пройдём циклом по массиву попапов
+popups.forEach(popup => {
+  // повесим обработчик события на каждый попап (оверлей)
+  popup.addEventListener('click', (event) => {
+    // проверим по какому элементу был клик, если по overlay (popup), то закроем его
+    if(event.target.classList.contains('popup')) {
+      // закрываем popup
+      closePopup(popup);
+    }
+  });
+});
