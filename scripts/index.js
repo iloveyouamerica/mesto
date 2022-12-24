@@ -109,9 +109,7 @@ const openPopup = (popup) => {
   popup.classList.add('popup_opened');
 
   // при открытии попап добавим обработчик события для клавиши Esc
-  document.addEventListener('keydown', (event) => {
-    closePopupByEsc(event, popup)
-  });
+  document.addEventListener('keydown', closePopupByEsc);
 
   // вызовем функцию добавления валидации всем формам
   // чтобы сразу проверить валидность формы на момент её открытия,
@@ -125,15 +123,16 @@ const closePopup = (popup) => {
   popup.classList.remove('popup_opened');
 
   // удалим обработчик события для клавиши Esc
-  document.removeEventListener('keydown', (event) => {
-    closePopupByEsc(event, popup)
-  });
+  document.removeEventListener('keydown', closePopupByEsc);
 };
 
 // функция закроет popup клавишей Esc
-const closePopupByEsc = (event, popup) => {
+const closePopupByEsc = (event) => {
+  // если была нажата клавиша Esc
   if(event.key === 'Escape') {
-    closePopup(popup);
+    // найдём открытый popup
+    const popupOpened = document.querySelector('.popup_opened');
+    closePopup(popupOpened);
   }
 };
 
