@@ -107,6 +107,11 @@ const resetForm = (form) => {
 const openPopup = (popup) => {
   // откроем popup
   popup.classList.add('popup_opened');
+
+  // вызовем функцию добавления валидации всем формам
+  // чтобы сразу проверить валидность формы на момент её открытия,
+  // т.к. форма профиля получит данные имени и деятельности, 
+  enableValidation(validationSettings);
 };
 
 // функция закрытия для всех popup
