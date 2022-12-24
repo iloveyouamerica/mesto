@@ -111,10 +111,17 @@ const openPopup = (popup) => {
   // при открытии попап добавим обработчик события для клавиши Esc
   document.addEventListener('keydown', closePopupByEsc);
 
-  // вызовем функцию добавления валидации всем формам
-  // чтобы сразу проверить валидность формы на момент её открытия,
-  // т.к. форма профиля получит данные имени и деятельности, 
-  enableValidation(validationSettings);
+  // после открытия popup сразу же проверим поля формы, и примим решение активировать или деактивировать кнопку submit
+  // так как форма редактирования профиля может быть заполненной динамически
+  // таким образом мы проверяем поля формы открытого popup и не навешиваем многократно слушатели событий
+  if(popup.id === 'popup-edit' || popup.id === 'popup-add'){
+    // проверку делаем только для попапа редактирования профиля и добавления новых карточек, где есть формы
+    const inputList = Array.from(popup.querySelectorAll(validationSettings.inputSelector));
+    const buttonElement = popup.querySelector(validationSettings.submitButtonSelector);
+
+    // проверим валидность полей формы, заполненных динамичсеки и незаполненных 
+    toggleButtonState(inputList, buttonElement, validationSettings);
+  }
 };
 
 // функция закрытия для всех popup

@@ -94,6 +94,4 @@ const toggleButtonState = (inputList, buttonElement, settings) => {
 };
 
 // вызовем функцию добавления валидации всем формам
-// лучше вызывать при открытии popup, так как форма может заполняться / очищаться динамически
-// вызов фукции запуска валидации перенесён в открытие popup
-//enableValidation(validationSettings);
+enableValidation(validationSettings);
