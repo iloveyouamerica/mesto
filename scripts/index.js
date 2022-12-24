@@ -131,6 +131,9 @@ const closePopup = (popup) => {
 
   // удалим обработчик события для клавиши Esc
   document.removeEventListener('keydown', closePopupByEsc);
+
+  // удалим ошибки в форме
+  clearErrorMessage(popup);
 };
 
 // функция закроет popup клавишей Esc
@@ -171,6 +174,15 @@ const submitAddCardForm  = (event) => {
   // очистим поля формы и закроем popup
   resetForm(event.target);
 };
+
+// функция удаляет сообщения с ошибками формы
+const clearErrorMessage = (popup) => {
+  const elementForm = popup.querySelector(validationSettings.formSelector);
+  const inputList = popup.querySelectorAll(validationSettings.inputSelector);
+  inputList.forEach(input => {
+    hideInputError(elementForm, input, validationSettings);
+  });
+}
 
 // слушатели событий
 buttonOpenEditProfileForm.addEventListener('click', setProfileData); // открыть popup для редактирования данных
