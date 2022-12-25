@@ -93,5 +93,12 @@ const toggleButtonState = (inputList, buttonElement, settings) => {
   }
 };
 
+// функция удаляет сообщения с ошибками формы
+const clearErrorMessage = (elementForm, inputList, settings) => {
+  inputList.forEach(input => {
+    hideInputError(elementForm, input, settings);
+  });
+}
+
 // вызовем функцию добавления валидации всем формам
 enableValidation(validationSettings);
